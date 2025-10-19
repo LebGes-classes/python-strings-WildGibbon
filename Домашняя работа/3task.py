@@ -12,8 +12,11 @@ for char in text:
         read_word = ""
     elif char != " ":
         if char in string.ascii_uppercase:
-            char_alphabet_index = [j for j in range(26) if string.ascii_uppercase[j] == char][0]
-            read_word += string.ascii_lowercase[char_alphabet_index]
+            char_alphabet_index = []
+            for j in range(26):
+                if string.ascii_uppercase[j] == char:
+                    char_alphabet_index.append(j)
+            read_word += string.ascii_lowercase[char_alphabet_index[0]]
         else:
             read_word = read_word + char
 
